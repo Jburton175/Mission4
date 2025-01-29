@@ -25,9 +25,8 @@ namespace Mission4
         }
 
         //Contain a method that receives the game board array as input and returns if there is a winner and who it was
-        public static bool gameWinner(char[] board)
+        public static bool gameWinner(char[] board, out char winner)
         {
-            char winner = ' ';
             // Winning combinations
             int[,] winningCombos =
             {
@@ -43,7 +42,6 @@ namespace Mission4
                 {
                     winner = board[winningCombos[i, 0]];
                     Console.WriteLine($"The winner is {board[winningCombos[i, 0]]}");
-                    
                     return true;
                 }
             }
