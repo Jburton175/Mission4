@@ -47,15 +47,21 @@ do
 
     guesses++;
 
+
+
     // Print the board by calling the method in the supporting class
+    Console.WriteLine(' ');
+
     BoardTools.printBoard(board);
 
+    Console.WriteLine(' ');
+
     // Check for a winner by calling the method in the supporting class notify the players when a win has occurred and which player won the game
-    BoardTools.gameWinner(board);
-
-    
-
-    //gameEnd = false;
+    if (BoardTools.gameWinner(board))
+    {
+        gameEnd = true;
+        break; // Exit loop
+    }
 
     if (guesses == 9 && gameEnd == false)
     {
