@@ -23,7 +23,11 @@ do
     // Ask each player in turn for their choice and update the game board array
     System.Console.WriteLine("Player " + player + ", where do you want to place an " + player + "?");
     //playerInput = System.Console.ReadLine();
-    while ((!int.TryParse(System.Console.ReadLine(), out playerInput) || playerInput <= 0) && (!Array.Exists(board, c => c == playerInput)))
+    while (!int.TryParse(System.Console.ReadLine(), out playerInput) 
+        || playerInput < 1 
+        || playerInput > 9 
+        || board[playerInput - 1] == 'X' 
+        || board[playerInput - 1] == 'O')
     {
         System.Console.WriteLine("Please enter a number that has not been chosen yet, 1 through 9.");
     }
