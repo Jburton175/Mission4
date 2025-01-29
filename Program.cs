@@ -16,7 +16,7 @@ int playerInput = 0;
 int guesses = 0;
 
 
-printBoard(board);
+BoardTools.printBoard(board);
 
 do
 {
@@ -44,10 +44,10 @@ do
     guesses++;
 
     // Print the board by calling the method in the supporting class
-    printBoard(board);
+    BoardTools.printBoard(board);
 
     // Check for a winner by calling the method in the supporting class notify the players when a win has occurred and which player won the game
-    gameWinner(board);
+    BoardTools.gameWinner(board);
 
     
 
